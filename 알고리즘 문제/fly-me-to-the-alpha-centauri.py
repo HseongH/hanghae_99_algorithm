@@ -1,19 +1,19 @@
 from sys import stdin
 
-test_case = int(stdin.readline())
+input = stdin.readline
+
+test_case = int(input())
+
+def number_of_operations(distance):
+    square_root = distance ** 0.5
+
+    if round(square_root) >= square_root:
+        return round(distance ** 0.5) * 2 - 1
+    return round(distance ** 0.5) * 2
 
 for _ in range(test_case):
-    x, y = map(int, stdin.readline().split())
+    x, y = map(int, input().split())
     distance = y - x
-    count = 0
-    move = 1
-    move_distance = 0
-
-    while move_distance < distance:
-        count += 1
-        move_distance += move
-
-        if not count % 2:
-            move += 1
+    count = number_of_operations(distance)
 
     print(count)
