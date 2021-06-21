@@ -1,5 +1,8 @@
-from math import ceil
 from sys import stdin
+from math import ceil
 
-a, b, v = map(int, stdin.readline().split())
+input = stdin.readline
+
+a, b, v = map(int, input().split())
+
 print(ceil((v - b) / (a - b)))
